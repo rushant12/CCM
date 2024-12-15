@@ -1,0 +1,5 @@
+package com.product.entity.controller;
+
+public class ProductController {
+
+}

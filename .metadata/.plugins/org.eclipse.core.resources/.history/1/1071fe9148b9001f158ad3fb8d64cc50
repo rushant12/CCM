@@ -1,0 +1,10 @@
+package com.product.service;
+
+import com.product.entity.Product;
+import com.product.model.UserResponse;
+
+public interface ProductService {
+	
+	UserResponse addProduct(Product product);
+
+}

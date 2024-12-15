@@ -1,0 +1,14 @@
+package com.product.service;
+
+import java.util.Optional;
+
+import com.product.entity.Product;
+import com.product.model.UserResponse;
+
+public interface ProductService {
+	
+	UserResponse addProduct(Product product);
+	
+	Optional<Product> getProductById(int id);
+
+}

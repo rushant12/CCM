@@ -1,0 +1,7 @@
+spring.application.name=CustomerService
+server.port=8001
+
+spring.datasource.driver-class-name=BankProjectCustomerService
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=

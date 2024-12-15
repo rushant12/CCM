@@ -1,0 +1,21 @@
+package com.product.service;
+
+import org.springframework.stereotype.Service;
+
+import com.product.entity.Product;
+import com.product.model.UserResponse;
+
+@Service
+public class ProductServiceImplementation implements ProductService{
+
+	@Override
+	public UserResponse addProduct(Product product) {
+		
+		
+		
+		return null;
+	}
+	
+	
+
+}

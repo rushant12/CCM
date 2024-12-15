@@ -1,0 +1,22 @@
+package com.bank.customer.authentication;
+
+import org.springframework.security.config.annotation.rsocket.RSocketSecurity.JwtSpec;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JWTUtility {
+	
+	
+	private String secretKey;
+	
+	private final long expiration = 86400000L; // 24 hours
+	
+	public String generateToken() {
+		
+		
+		
+	}
+	
+	
+
+}

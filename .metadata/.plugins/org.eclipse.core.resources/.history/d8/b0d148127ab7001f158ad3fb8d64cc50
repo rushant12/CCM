@@ -1,0 +1,5 @@
+package com.bank.customer.model;
+
+public class UserResponse {
+
+}

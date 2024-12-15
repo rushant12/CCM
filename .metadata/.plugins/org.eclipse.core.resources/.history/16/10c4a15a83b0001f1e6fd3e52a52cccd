@@ -1,0 +1,5 @@
+package com.project.jwtexample.util;
+
+public class JWTUtility {
+
+}

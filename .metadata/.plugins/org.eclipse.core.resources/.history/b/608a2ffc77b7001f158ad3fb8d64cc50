@@ -1,0 +1,16 @@
+package com.bank.customer.entity;
+
+public class Customer {
+	
+	
+	private int cid;
+	
+	private String cname;
+	
+	private String email;
+	
+	private String phone;
+	
+	
+
+}

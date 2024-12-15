@@ -1,0 +1,10 @@
+package com.bank.customer.service;
+
+import com.bank.customer.entity.Customer;
+import com.bank.customer.model.UserResponse;
+
+public interface CustomerService {
+	
+	UserResponse addCustomer(Customer customer);
+
+}

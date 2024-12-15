@@ -1,0 +1,9 @@
+package com.product.model;
+
+public class UserResponse {
+	
+	private String message;
+	
+	private String code;
+
+}

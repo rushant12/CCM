@@ -1,0 +1,14 @@
+package com.bank.customer.controller;
+
+
+import com.bank.customer.service.CustomerService;
+
+@RestController
+@RequestMapping (value = "/api/customers")
+public class CustomerController {
+	
+	@Autowired
+	public CustomerService customerServices;
+	
+	
+}

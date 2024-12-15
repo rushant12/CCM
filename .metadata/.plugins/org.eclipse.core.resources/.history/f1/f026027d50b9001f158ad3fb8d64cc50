@@ -1,0 +1,21 @@
+spring.application.name=ProductService
+server.port=3002
+
+
+
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/BankProjectCustomerService
+spring.datasource.username=root
+spring.datasource.password=root
+
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+jwt.secret=ndeijafhyoqwulih
+
+# Eureka Client configuration to register with the Eureka Server
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+
+# Optional: disable fetching of registry data from Eureka if you don't need it
+eureka.client.fetch-registry=true

@@ -1,0 +1,9 @@
+package com.bank.customer.model;
+
+public class UserResponse {
+	
+	private String message;
+	
+	private String code;
+
+}

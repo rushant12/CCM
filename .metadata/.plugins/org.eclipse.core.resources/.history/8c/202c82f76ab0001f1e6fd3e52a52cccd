@@ -1,0 +1,69 @@
+package com.project.hdfc.serviceImplementation;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.project.hdfc.model.Account;
+import com.project.hdfc.model.User;
+import com.project.hdfc.repo.AccountRepository;
+import com.project.hdfc.repo.UserRepository;
+
+@Service
+public class UserService implements UserDetailsService {
+	
+	@Autowired
+	UserRepository userRepository;
+	
+	@Autowired
+	AccountRepository accountRepository;
+	
+	
+	public User createUser(User user)
+	{
+		List<Account> list = user.getAccounts();
+		for (Account account : list)
+		{
+			account.setUser(user);
+		}
+		
+		
+		return userRepository.save(user);
+	}
+	
+	@Transactional
+	public void transferMoney(String fromAccount, String fromAccountTo, double amount)
+	{
+		Account fromAcc = accountRepository.findByAccountNumber(fromAccount);
+		Account AccountTo = accountRepository.findByAccountNumber(fromAccountTo);
+		
+		if(fromAcc.getBalance() < amount)
+		{
+			throw new RuntimeException("Insufficient Balance");
+		}
+		
+		fromAcc.setBalance(fromAcc.getBalance() - amount);
+		AccountTo.setBalance(AccountTo.getBalance() + amount);
+		
+		accountRepository.save(fromAcc);
+		accountRepository.save(AccountTo);
+		
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	 User user = userRepository.findByUsername(username);
+	 if (user == null)
+	 {
+		 throw new UsernameNotFoundException("User Not Found");
+	 }
+		
+		return null;
+	}
+
+}

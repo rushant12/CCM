@@ -1,0 +1,5 @@
+package com.project.hdfc.repo;
+
+public interface UserRepository  {
+
+}

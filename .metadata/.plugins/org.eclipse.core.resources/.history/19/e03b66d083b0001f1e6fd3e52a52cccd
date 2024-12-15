@@ -1,0 +1,16 @@
+package com.project.jwtexample.util;
+
+import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties.Jwt;
+import org.springframework.security.config.annotation.rsocket.RSocketSecurity.JwtSpec;
+
+public class JWTUtility {
+	
+	
+	private String seceretKey = "mwqon2^&^%xakjJSN@&(&)";
+	
+	private String generateToken(String username)
+	{
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.project.jwtexample.util;
+
+public class JWTUtility {
+	
+	
+	private String seceretKey = "mwqon2^&^%xakjJSN@&(&)";
+	
+	
+
+}

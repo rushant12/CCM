@@ -1,0 +1,41 @@
+package com.bank.customer.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.bank.customer.authentication.JWTUtility;
+import com.bank.customer.entity.Customer;
+import com.bank.customer.exception.CustomerAlreadyExist;
+import com.bank.customer.exception.InvalidDetails;
+import com.bank.customer.model.UserResponse;
+import com.bank.customer.repository.CustomerRepository;
+
+@Service
+public class CustomerServiceImplementation implements CustomerService {
+	
+	@Autowired
+	CustomerRepository customerRepository;
+	
+	@Autowired
+	JWTUtility JWTUtility;
+	
+	@Autowired
+	BCryptPasswordEncoder passwordEncoder;
+
+	@Override
+	public UserResponse registerCustomer(Customer customer) {
+		
+		UserResponse userResponse = new UserResponse();
+		customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+		if(customer != null) {
+		customerRepository.save(customer);
+		userResponse.setMessage("User Registered Successfully");
+		userResponse.setCode("Success");
+		}
+		return userResponse;
+	}
+}
