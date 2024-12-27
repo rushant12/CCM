@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="BankingProject"/>
-<aop-project name="JWTExample"/>
+<aop-project name="BankServiceRegistry"/>
+<aop-project name="CustomerService"/>
+<aop-project name="ProductService"/>
 </aop-reference-model>
